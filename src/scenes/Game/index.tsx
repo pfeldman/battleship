@@ -1,8 +1,8 @@
 import React from 'react'
+import Board from './components/Board'
 
 const Game: React.FC = () => {
-  /* TODO: Board Here */
-  return <span>Hello</span>
+  return <Board />
 }
 
 export default Game
