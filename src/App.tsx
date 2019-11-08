@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Background from 'components/Background'
+import LayoutRoute from 'components/LayoutRoute'
+import GlobalStyles from './globalStyles'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import Game from 'scenes/Game'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Background className="App">
+        <GlobalStyles />
+        <Switch>
+          <Route exact path='/'>
+            <Redirect to='/game' />
+          </Route>
+          <LayoutRoute path='/game' component={Game} />
+        </Switch>
+      </Background>
+    </Router>
   );
 }
 
