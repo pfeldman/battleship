@@ -1,9 +1,19 @@
 import React from 'react'
-import { Route, RouteProps } from 'react-router-dom'
+import { Route, RouteProps, Link } from 'react-router-dom'
+import { Nav, Header } from './styled'
 
 const LayoutRoute: React.FC<RouteProps> = (props) => {
   return (
-    <Route {...props} />
+    <>
+      <Header>
+        <Nav>
+          <Link to='/game'>play</Link>
+          <Link to='/statics'>Statics</Link>
+          <Link to='/settings'>Settings</Link>
+        </Nav>
+      </Header>
+      <Route {...props} />
+    </>
   )
 }
 

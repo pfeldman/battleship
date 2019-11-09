@@ -6,6 +6,8 @@ import LayoutRoute from 'components/LayoutRoute'
 import GlobalStyles from './globalStyles'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Game from 'scenes/Game'
+import Settings from 'scenes/Settings'
+import Statics from 'scenes/Statics'
 
 const App: React.FC = () => {
   const store = configureStore()
@@ -20,6 +22,8 @@ const App: React.FC = () => {
               <Redirect to='/game' />
             </Route>
             <LayoutRoute path='/game' component={Game} />
+            <LayoutRoute path='/settings' component={Settings} />
+            <LayoutRoute path='/statics' component={Statics} />
           </Switch>
         </Background>
       </Provider>
